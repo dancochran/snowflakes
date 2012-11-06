@@ -1,9 +1,15 @@
+var INCREMENT_MIN = 3;
+var INCREMENT_MAX = 9;
+var ARMLENGTH_MIN = 10;
+var ARMLENGTH_MAX = 60;
+var LINEWIDTH = 2;
+
 function Snowflake() {
     console.log("Entered Snowflake()");
     var color = 'rgb(200, 200, 200)';
 
     ctx.strokeStyle = color;
-    ctx.lineWidth = 2;
+    ctx.lineWidth = LINEWIDTH;
 }
 
 Snowflake.prototype = {
@@ -51,8 +57,8 @@ Snowflake.prototype = {
         ctx.stroke();
 
         // now work out the arms
-        var increment = randInt(3, 12);
-        var armLength = randInt(10, 75);
+        var increment = randInt(INCREMENT_MIN, INCREMENT_MAX);
+        var armLength = randInt(ARMLENGTH_MIN, ARMLENGTH_MAX);
         var armDir = randInt(1, 2); // 1 = armsOut, 2 = armsIn
         var lx, ly;
         var active_cx, active_cy;
@@ -184,8 +190,10 @@ Snowflake.prototype = {
                 ctx.lineTo(active_cx - armLength, active_cy);
             }
 
-            increment += randInt(3, 12);
-            armLength = randInt(10, 75);
+            // TODO - armLength max increases as you go out
+            increment += randInt(INCREMENT_MIN, INCREMENT_MAX);
+            armLength = randInt(ARMLENGTH_MIN, ARMLENGTH_MAX);
+            //armLength = randInt(ARMLENGTH_MIN, ARMLENGTH_MAX) + (20 * increment / delta);
             armDir = randInt(1, 2);
         }
 

@@ -5,7 +5,6 @@ var ARMLENGTH_MAX = 60;
 var LINEWIDTH = 2;
 
 function Snowflake() {
-    console.log("Entered Snowflake()");
     var color = 'rgb(200, 200, 200)';
 
     ctx.strokeStyle = color;
@@ -14,7 +13,6 @@ function Snowflake() {
 
 Snowflake.prototype = {
     draw: function () {
-        console.log("Entered Snowflake.draw(), height = " + canvasHeight);
         //ctx.strokeStyle = "#fff";
         //ctx.lineWidth = 1;
 
@@ -31,7 +29,6 @@ Snowflake.prototype = {
             ch = cw;
             delta = cw - cx;
         }
-        console.log("Snowflake::draw() - cw = " + cw + ", ch = " + ch);
 
         var dx = Math.cos(Math.PI / 4) * delta;
         var dy = Math.sin(Math.PI / 4) * delta;

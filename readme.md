@@ -14,7 +14,7 @@ as JavaScript (and projects like node.js and jQuery) has come a long way. This o
 was a simple one, the one that presented the most challenge was GNU C and X11
 running on a very early distribution (Slackware iirc) of Linux.
 
-Overall I've found this exercise to be very useful (and it looks good too) as it tends to 
+Overall I've found this exercise to be very useful as it tends to 
 exercise most basic language features and has a graphic element which also makes
 it applicable to learning new graphic APIs. I hope you enjoy it
 as much as I have.
